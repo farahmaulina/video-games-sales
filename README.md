@@ -19,5 +19,25 @@ Fields include:
 ## Analyzing the data
 1. Which platform is the most popular?  
 ```sql
-SELECT Platform, COUNT(Platform) as Number_Platform FROM `vgsales.video_game_sales` GROUP BY Platform ORDER BY Number_Platform DESC LIMIT 3;
+SELECT Platform, COUNT(Platform) as Numb_Platform FROM `vgsales.video_game_sales` GROUP BY Platform ORDER BY Numb_Platform DESC LIMIT 5;
+```
+2. Which published most of the games?
+```sql
+SELECT Publisher, COUNT(Publisher) as Count_Pub FROM `vgsales.video_game_sales` GROUP BY Publisher ORDER BY Count_Pub DESC LIMIT 5;
+```
+3. Which games genre is the most popular?
+```sql
+SELECT Genre, COUNT(Genre) as Count_Genre FROM `vgsales.video_game_sales` GROUP BY Genre ORDER BY Count_Genre DESC LIMIT 5;
+```
+4. Which the most selling video game on 2012 based on global sales?
+```sql
+SELECT Name, Global_Sales FROM `vgsales.video_game_sales` WHERE Year = '2012' ORDER BY Global_Sales DESC LIMIT 5;
+```
+5. 5 games with lowest global sales
+```sql
+SELECT Name, Global_Sales FROM `vgsales.video_game_sales` ORDER BY Global_Sales ASC LIMIT 5;
+```
+6. 5 most selling game in europe on 2010-2012
+```sql
+SELECT Name, Year, EU_Sales as Europe_Sales FROM `vgsales.video_game_sales` WHERE Year BETWEEN '2010' AND '2012' ORDER BY Europe_Sales DESC LIMIT 5;
 ```
